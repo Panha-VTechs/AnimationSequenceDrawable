@@ -1,7 +1,8 @@
 package com.humrousz.sequence;
 
 import android.graphics.Bitmap;
-import android.support.annotation.IntDef;
+
+import androidx.annotation.IntDef;
 
 import com.facebook.animated.gif.GifImage;
 import com.facebook.animated.webp.WebPImage;
