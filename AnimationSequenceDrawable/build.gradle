@@ -29,6 +29,25 @@ android {
     }
 }
 
+afterEvaluate {
+    publishing {
+        publications {
+            aarRelease(MavenPublication) {
+                // Use the AAR file directly
+                artifact("$buildDir/outputs/aar/${project.name}-release.aar")
+
+                groupId = 'Panha-Vtechs'
+                artifactId = 'AnimationSequenceDrawable'
+                version = '1.0.0'
+            }
+        }
+
+        repositories {
+            mavenLocal()
+        }
+    }
+}
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
