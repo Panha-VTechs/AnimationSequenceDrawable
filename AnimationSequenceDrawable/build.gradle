@@ -46,6 +46,11 @@ afterEvaluate {
             mavenLocal()
         }
     }
+
+    // Explicitly declare dependency to ensure correct task order
+    tasks.named("publishAarReleasePublicationToMavenLocal") {
+        dependsOn tasks.named("bundleReleaseAar")
+    }
 }
 
 dependencies {
