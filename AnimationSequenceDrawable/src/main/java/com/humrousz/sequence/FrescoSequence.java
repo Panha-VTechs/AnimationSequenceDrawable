@@ -8,6 +8,7 @@ import com.facebook.animated.gif.GifImage;
 import com.facebook.animated.webp.WebPImage;
 import com.facebook.imagepipeline.animated.base.AnimatedImage;
 import com.facebook.imagepipeline.animated.base.AnimatedImageFrame;
+import com.facebook.imagepipeline.common.ImageDecodeOptions;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -76,11 +77,11 @@ public class FrescoSequence extends BaseAnimationSequence {
 
 
     public static FrescoSequence decodeWebPByteArray(byte[] data){
-        return new FrescoSequence(WebPImage.create(data));
+        return new FrescoSequence(WebPImage.createFromByteArray(data, ImageDecodeOptions.defaults()));
     }
 
     public static FrescoSequence decodeGifPByteArray(byte[] data){
-        return new FrescoSequence(GifImage.create(data));
+        return new FrescoSequence(GifImage.createFromByteArray(data));
     }
 
     public static class FrescoWebpSequenceFactory extends BaseSequenceFactory {
